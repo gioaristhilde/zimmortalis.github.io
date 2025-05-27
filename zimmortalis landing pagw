@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zimmortallis | Luxury Rentals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 2rem;
+      background-color: #0a0a0a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    nav a {
+      color: gold;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 700;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: crimson;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .tab {
+      background: #111;
+      color: white;
+      padding: 1rem 2rem;
+      margin: 0 1rem;
+      cursor: pointer;
+      border: 2px solid crimson;
+      border-radius: 1rem;
+      transition: 0.3s;
+    }
+
+    .tab:hover {
+      background: crimson;
+    }
+
+    .content-section {
+      display: none;
+      padding: 4rem 2rem;
+      background-color: #111;
+      text-align: center;
+    }
+
+    .content-section.active {
+      display: block;
+    }
+
+    .content-section h2 {
+      font-size: 2.5rem;
+      color: gold;
+      margin-bottom: 2rem;
+    }
+
+    .content-section img {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 1rem;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: royalblue;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .tabs {
+        flex-direction: column;
+      }
+
+      .tab {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="IMG_2016.png" alt="Zimmortallis Logo">
+    <nav>
+      <a href="#">Studios</a>
+      <a href="#">Homes</a>
+      <a href="#">Cars</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to Zimmortallis — Experience the Elite</h1>
+  </section>
+
+  <div class="tabs">
+    <div class="tab" onclick="showTab('studios')">🎧 Studios</div>
+    <div class="tab" onclick="showTab('homes')">🏝️ Homes</div>
+    <div class="tab" onclick="showTab('cars')">🚘 Cars</div>
+  </div>
+
+  <section id="studios" class="content-section active">
+    <h2>Futuristic Studios</h2>
+    <img src="https://images.unsplash.com/photo-1593696140824-1c8a798cfa01" alt="Studio">
+    <a class="cta-button" href="studios.html">Rent Studio</a>
+  </section>
+
+  <section id="homes" class="content-section">
+    <h2>Tropical Vacation Homes</h2>
+    <img src="https://images.unsplash.com/photo-1600585153899-901b29e8e2d2" alt="Homes">
+    <a class="cta-button" href="homes.html">Book Home</a>
+  </section>
+
+  <section id="cars" class="content-section">
+    <h2>Luxury Cars with Ambient Lighting</h2>
+    <img src="https://images.unsplash.com/photo-1616627983455-f8ce35c1d1f6" alt="Cars">
+    <a class="cta-button" href="cars.html">View Car Options</a>
+  </section>
+
+  <script>
+    function showTab(id) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+
+</html>
